@@ -16,8 +16,8 @@ export default function App() {
   } = useTasks(user?.id);
   const { labels } = useLabels(user?.id);
   const { members, addMember, removeMember } = useTeamMembers(user?.id);
-  const { comments, loading: commentsLoading, fetchComments, addComment, clearComments } = useComments(user?.id);
-  const { activities, fetchActivity, logActivity, clearActivity } = useActivity(user?.id);
+  const { comments, loading: commentsLoading, fetchComments, addComment } = useComments(user?.id);
+  const { activities, fetchActivity, logActivity } = useActivity(user?.id);
 
   const handleTaskOpen = useCallback((taskId: string) => {
     fetchComments(taskId);
